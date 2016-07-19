@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<action-sequence> 
+  <name>session-user-theme.xaction</name>
+  <title>%title</title>
+  <version>1</version>
+  <logging-level>debug</logging-level>
+  <documentation> 
+    <author>Miguel Gaspar</author>  
+    <description>%description</description>  
+    <help/> 
+  </documentation>
+
+  <inputs> 
+    <username type="string"> 
+      <sources> 
+        <security>principalName</security> 
+      </sources> 
+    </username> 
+  </inputs>
+
+  <outputs> 
+    <outputmessage type="string"/> 
+  </outputs>
+
+  <resources/>
+  
+  <actions> 
+    <action-definition> 
+      <component-name>org.pentaho.platform.engine.services.solution.PojoComponent</component-name>
+      <action-type>Custom</action-type>
+      <action-inputs> 
+        <name type="string" mapping="username"/> 
+      </action-inputs>
+      <action-resources/>
+      <action-outputs> 
+        <output type="string" mapping="outputmessage"/> 
+      </action-outputs>
+      <component-definition>
+        <class>com.github.mfgaspar.pentaho.xaction.CustomCodeForActionSequence</class>
+      </component-definition> 
+    </action-definition>
+ 
+  </actions> 
+</action-sequence>
