@@ -1,0 +1,1549 @@
+{
+ "components": {
+  "rows": [
+   {
+    "id": "GENERIC",
+    "name": "Generic",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "type": "Label",
+      "value": "Generic"
+     }
+    ],
+    "type": "Label",
+    "typeDesc": "<i>Group</i>"
+   },
+   {
+    "id": "a3fea8df-75ae-be67-d5da-4edc8d40a81c",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "brokerParam"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": "ws://localhost:9002/mqtt"
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "b0c5341a-0fcd-1270-cae2-8fca1098e743",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "topicParam"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": "pdiDataStream"
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "e1ad36d7-de0f-3388-d71e-59df46fbe698",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "switchParam"
+     },
+     {
+      "name": "propertyValue",
+      "type": "String",
+      "value": "0"
+     },
+     {
+      "name": "parameterViewRole",
+      "type": "parameterViewRoleCustom",
+      "value": "unused"
+     },
+     {
+      "name": "bookmarkable",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "public",
+      "type": "Boolean",
+      "value": "false"
+     }
+    ],
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter"
+   },
+   {
+    "id": "OTHERCOMPONENTS",
+    "name": "Others",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "type": "Label",
+      "value": "Others"
+     }
+    ],
+    "type": "Label",
+    "typeDesc": "<i>Group</i>"
+   },
+   {
+    "id": "5ea68af4-ded8-0803-2b7c-5bcd0a2289ec",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "map"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[]"
+     },
+     {
+      "name": "customfunction",
+      "type": "JavaScript",
+      "value": "function() {\n \n    var map;\n    var ajaxRequest;\n    var plotlist;\n    var plotlayers=[];\n\n    // set up the map\n    map = new L.Map('map');\n\n\t// create the tile layer with correct attribution\n    \n\tvar osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';\n\tvar osmAttrib='Map data © <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors';    \n    /*\n    var osm = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {\n        attribution: '&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> &copy; <a href=\"http://cartodb.com/attributions\">CartoDB</a>',\n\t    subdomains: 'abcd',\n\t    maxZoom: 19\n    });\n    */\n    \n     var osm = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {\n    maxZoom: 19,\n\tattribution: '&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a>, Tiles courtesy of <a href=\"http://hot.openstreetmap.org/\" target=\"_blank\">Humanitarian OpenStreetMap Team</a>'\n});\n\t// start the map in South-East England\n\tmap.setView(new L.LatLng(51.4775, -0.4614), 12);\n\tmap.addLayer(osm);\n        \n    this.mapMarker = L.marker([51.4775, -0.4614]).addTo(map);    \n    this.mapMarker.bindPopup(\"<b>Plain#4</b><br>From X to Y\").openPopup();\n    \n    var $miniChart = \"<div>Droid #4</div><div>From X to Y</div>\";\n    this.mapMarker.bindPopup($miniChart).openPopup();\n    \n    // var lat = value/10000;\n    // var lng = value/5000\n    // mapMarker.setLatLng([mapMarker.getLatLng().lat-lat, mapMarker.getLatLng().lng-lng]).update();\n \n\n} "
+     },
+     {
+      "name": "parameters",
+      "type": "ValuesArray",
+      "value": "[]"
+     },
+     {
+      "name": "manageCallee",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "width",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:map}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postFetch",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "preChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Freeform Component",
+    "type": "Componentsfreeform",
+    "typeDesc": "Freeform Component"
+   },
+   {
+    "id": "774f2f2f-ec55-2174-e73c-876020b6af63",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "lineChart"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[]"
+     },
+     {
+      "name": "customfunction",
+      "type": "JavaScript",
+      "value": "function() {\n    \n    this.data = {\n        labels: [\"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\", \"10\", \"11\", \"12\", \"13\", \"14\", \"15\"],\n        datasets: [\n            {\n                label: \"Measure\",\n                fillColor: \"rgba(200,200,200, 0.7)\",\n                strokeColor: \"rgba(180,180,180,0.9)\",\n                pointColor: \"rgba(220,220,220,0.9)\",\n                pointStrokeColor: \"#fff\",\n                pointHighlightFill: \"#fff\",\n                pointHighlightStroke: \"rgba(220,220,220,1)\",\n                data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\n            }\n        ]\n    };\n    \n    var htmlObject = document.getElementById(\"canvasLineChart\").getContext(\"2d\");\n    this.chart = new Chart(htmlObject).Line(this.data, {\n\t\tresponsive : false,\n        animation: false\n\t});\n} "
+     },
+     {
+      "name": "parameters",
+      "type": "ValuesArray",
+      "value": "[]"
+     },
+     {
+      "name": "manageCallee",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "width",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": ""
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postFetch",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "preChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Freeform Component",
+    "type": "Componentsfreeform",
+    "typeDesc": "Freeform Component"
+   },
+   {
+    "id": "32a12210-798b-4537-c26c-ca9468c8110a",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "barChart"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[]"
+     },
+     {
+      "name": "customfunction",
+      "type": "JavaScript",
+      "value": "function() {\n    \n    this.data = {\n    \tlabels : [\"Device#1\",\"Device#2\",\"Device#3\",\"Device#4\",\"Device#5\",\"Device#6\",\"Device#7\",\"Device#8\"],\n\t\tdatasets : [\n\t\t\t{\n                \n                 fillColor: \"rgba(200,200,200, 0.7)\",\n                strokeColor: \"rgba(180,180,180,0.9)\",\n                pointColor: \"rgba(220,220,220,0.9)\",\n                pointStrokeColor: \"#fff\",\n                pointHighlightFill: \"#fff\",\n                pointHighlightStroke: \"rgba(220,220,220,1)\",\n                \n                /*\n                \n                fillColor: \"rgba(200,200,200, 0.7)\",\n                strokeColor: \"rgba(180,180,180, 0.0)\",\n                pointColor: \"rgba(220,220,220,1)\",\n                highlightStroke: \"rgba(220,220,220,1)\",\n                */\n\t\t\t\tdata : [0, 0, 0, 0, 0, 0, 0, 0]\n\t\t\t}\n\t\t]\n\n\t}\n    \n    var htmlObject = document.getElementById(\"canvasBarChart\").getContext(\"2d\");\n    this.chart = new Chart(htmlObject).Bar(this.data, {\n\t\tresponsive : false,\n        animation: true,\n        animationDuration: 20\n\t});\n} "
+     },
+     {
+      "name": "parameters",
+      "type": "ValuesArray",
+      "value": "[]"
+     },
+     {
+      "name": "manageCallee",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "width",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": ""
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postFetch",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "preChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Freeform Component",
+    "type": "Componentsfreeform",
+    "typeDesc": "Freeform Component"
+   },
+   {
+    "id": "53273fe0-4389-3875-cd43-492406beff5f",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "messages"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "['${p:switchParam}']"
+     },
+     {
+      "name": "customfunction",
+      "type": "JavaScript",
+      "value": "function() {\n    \n    var myself=this;\n    var broker = dashboard.getParameterValue('brokerParam');\n    var client  = this.client = mqtt.connect(broker);\n    client.on('connect', function () {\n        console.log('connected...');\n        var topic = dashboard.getParameterValue('topicParam');\n        client.subscribe(topic);\n    });\n\n    client.on('message', function (topic, message) {\n        //console.log(topic+': '+message.toString());\n                \n        var chart = dashboard.getComponentByName('${c:barChart}');\n        var lineChart = dashboard.getComponentByName('${c:lineChart}');\n        var map = dashboard.getComponentByName('${c:map}');\n        var parsedMessage = JSON.parse(message.toString());\n        \n        var msg = message.toString();\n        myself.placeholder().prepend('<div>Device ID :'+parsedMessage.measureID+'  - Value: '+parsedMessage.value+'</div>')\n\n        \n        chart.chart.datasets[0].bars[Number(parsedMessage.measureID)-1].value = parsedMessage.value;\n        chart.chart.update();\n        \n        var _ = require('cdf/lib/underscore');\n        _.each(lineChart.chart.datasets[0].points, function(v, index){\n            var value = (lineChart.chart.datasets[0].points.length<=index+1)?parsedMessage.value:lineChart.chart.datasets[0].points[index+1].value;\n            lineChart.chart.datasets[0].points[index].value = value; \n            lineChart.chart.datasets[0].points[index].label = \"\"+index+1;\n        });\n        lineChart.chart.update();\n        \n        var lat = Number(parsedMessage.latitude);\n        var long = Number(parsedMessage.longitude);\n        map.mapMarker.setLatLng([lat, long]).update();\n        \n \n    });\n\n} "
+     },
+     {
+      "name": "parameters",
+      "type": "ValuesArray",
+      "value": "[]"
+     },
+     {
+      "name": "manageCallee",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "width",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "messages"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": "function() {\n    var switchValue = parseInt(dashboard.getParameterValue('${p:switchParam}'));\n    if (!switchValue) { \n        var comp = dashboard.getComponentByName('${c:messages}');\n        if (comp.client) comp.client.end();\n        return false; \n    }\n} "
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postFetch",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "preChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Freeform Component",
+    "type": "Componentsfreeform",
+    "typeDesc": "Freeform Component"
+   },
+   {
+    "id": "75f6f5a0-cbed-a987-0e3f-16b6ccb3a270",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "applyHTML"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[]"
+     },
+     {
+      "name": "expression",
+      "type": "JavaScript",
+      "value": "function() {\n    $('.title').html(\"Live data from IoT using Pentaho\");\n} "
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": ""
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "rowName": "Text Component",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component"
+   },
+   {
+    "id": "SELECTORS",
+    "name": "Selects",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "Group",
+      "type": "Label",
+      "value": "Selects"
+     }
+    ],
+    "type": "Label",
+    "typeDesc": "<i>Group</i>"
+   },
+   {
+    "id": "4b131fa9-fc77-22aa-ba7c-8d3abe3a055d",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "topic"
+     },
+     {
+      "name": "parameter",
+      "type": "Parameter",
+      "value": "${p:topicParam}"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[]"
+     },
+     {
+      "name": "maxLength",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "size",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:topic}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "preChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "type": "ComponentstextInput",
+    "typeDesc": "Text input Component"
+   },
+   {
+    "id": "eabed4c1-d3e2-b1a4-9abe-a81995b9428b",
+    "parent": "SELECTORS",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "switch"
+     },
+     {
+      "name": "separator",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "parameter",
+      "type": "Parameter",
+      "value": "${p:switchParam}"
+     },
+     {
+      "name": "listeners",
+      "type": "Listeners",
+      "value": "[]"
+     },
+     {
+      "name": "parameters",
+      "type": "ValuesArray",
+      "value": "[]"
+     },
+     {
+      "name": "isMultiple",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "valueAsId",
+      "type": "Boolean",
+      "value": "false"
+     },
+     {
+      "name": "dataSource",
+      "type": "Datasource",
+      "value": ""
+     },
+     {
+      "name": "valuesArray",
+      "type": "ValuesArray",
+      "value": "[[\"0\",\"Disconnect\"],[\"1\",\"Connect\"]]"
+     },
+     {
+      "name": "priority",
+      "type": "Integer",
+      "value": 5
+     },
+     {
+      "name": "refreshPeriod",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "htmlObject",
+      "type": "HtmlObject",
+      "value": "${h:switch}"
+     },
+     {
+      "name": "executeAtStart",
+      "type": "Boolean",
+      "value": "true"
+     },
+     {
+      "name": "preExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postExecution",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postFetch",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "preChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "postChange",
+      "type": "JavaScript",
+      "value": ""
+     },
+     {
+      "name": "tooltip",
+      "type": "Html",
+      "value": ""
+     }
+    ],
+    "type": "ComponentsmultiButton",
+    "typeDesc": "Multiple button Component"
+   }
+  ]
+ },
+ "datasources": {
+  "rows": []
+ },
+ "filename": "/public/realtime/mqtt/realtime.cdfde",
+ "layout": {
+  "rows": [
+   {
+    "id": "e6a2702d-4f0f-af45-6da1-48cdbacb519f",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "CSS"
+     },
+     {
+      "name": "resourceCode",
+      "type": "Resource",
+      "value": ".pentaho-toggle-button-down button {\n    border: 0px;\n}\n\n.leaflet-control-attribution.leaflet-control {\n    font-size: 9px;\n}\n\n.title {\n    background-color: rgba(0,159,200,1);\n    margin: 10px 0px 10px 0px;\n    padding: 10px 10px 10px 10px;\n    color: #fff;\n    border-radius: 3px;\n}\n\n\n.topic {\n    display: none;\n}\n\n.messages {\n    font-size: 10px;\n    max-height: 200px;\n    overflow-y: hidden;\n}\n\n.map {\n    height: 200px;\n} \n\ninput {\n    width: 50%;\n}\n\n.pentaho-toggle-button.pentaho-toggle-button {\n    display: inline-block;\n    text-align: right;\n}\n\n.switch div {\n    text-align: right;\n} \n\n\n/* ============================================================\n  COMMON\n============================================================ */\n.cmn-toggle {\n  position: absolute;\n  margin-left: -9999px;\n  visibility: hidden;\n}\n.cmn-toggle + label {\n  display: block;\n  position: relative;\n  cursor: pointer;\n  outline: none;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n/* ============================================================\n  SWITCH 1 - ROUND\n============================================================ */\ninput.cmn-toggle-round + label {\n  padding: 2px;\n  width: 120px;\n  height: 60px;\n  background-color: #dddddd;\n  -webkit-border-radius: 60px;\n  -moz-border-radius: 60px;\n  -ms-border-radius: 60px;\n  -o-border-radius: 60px;\n  border-radius: 60px;\n}\ninput.cmn-toggle-round + label:before, input.cmn-toggle-round + label:after {\n  display: block;\n  position: absolute;\n  top: 1px;\n  left: 1px;\n  bottom: 1px;\n  content: \"\";\n}\ninput.cmn-toggle-round + label:before {\n  right: 1px;\n  background-color: #f1f1f1;\n  -webkit-border-radius: 60px;\n  -moz-border-radius: 60px;\n  -ms-border-radius: 60px;\n  -o-border-radius: 60px;\n  border-radius: 60px;\n  -webkit-transition: background 0.4s;\n  -moz-transition: background 0.4s;\n  -o-transition: background 0.4s;\n  transition: background 0.4s;\n}\ninput.cmn-toggle-round + label:after {\n  width: 58px;\n  background-color: #fff;\n  -webkit-border-radius: 100%;\n  -moz-border-radius: 100%;\n  -ms-border-radius: 100%;\n  -o-border-radius: 100%;\n  border-radius: 100%;\n  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);\n  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);\n  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);\n  -webkit-transition: margin 0.4s;\n  -moz-transition: margin 0.4s;\n  -o-transition: margin 0.4s;\n  transition: margin 0.4s;\n}\ninput.cmn-toggle-round:checked + label:before {\n  background-color: #8ce196;\n}\ninput.cmn-toggle-round:checked + label:after {\n  margin-left: 60px;\n} "
+     },
+     {
+      "name": "resourceType",
+      "type": "Label",
+      "value": "Css"
+     }
+    ],
+    "type": "LayoutResourceCode",
+    "typeDesc": "Resource"
+   },
+   {
+    "id": "8008da93-186f-df42-c735-b271066c862d",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "ChartJS"
+     },
+     {
+      "name": "resourceFile",
+      "type": "ResourceFile",
+      "value": "${solution:resources/lib/Chart.js}"
+     },
+     {
+      "name": "resourceType",
+      "type": "Label",
+      "value": "Javascript"
+     }
+    ],
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource"
+   },
+   {
+    "id": "977ce8f0-3f02-d8a9-e595-1e6d4a054899",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "leaflet"
+     },
+     {
+      "name": "resourceFile",
+      "type": "ResourceFile",
+      "value": "${solution:resources/lib/leaflet.js}"
+     },
+     {
+      "name": "resourceType",
+      "type": "Label",
+      "value": "Javascript"
+     }
+    ],
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource"
+   },
+   {
+    "id": "f8dca89b-6896-0162-4917-9da60d6e470d",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "leafletCSS"
+     },
+     {
+      "name": "resourceFile",
+      "type": "ResourceFile",
+      "value": "${solution:resources/lib/leaflet.css}"
+     },
+     {
+      "name": "resourceType",
+      "type": "Label",
+      "value": "Css"
+     }
+    ],
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource"
+   },
+   {
+    "id": "55f174c3-756e-a3cc-a460-224bab72553d",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "mqtt"
+     },
+     {
+      "name": "resourceFile",
+      "type": "ResourceFile",
+      "value": "${solution:resources/lib/browserMqtt.js}"
+     },
+     {
+      "name": "resourceType",
+      "type": "Label",
+      "value": "Javascript"
+     }
+    ],
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource"
+   },
+   {
+    "id": "23f1daef-1f63-c78e-360f-f4264ccf207d",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "1d662f07-c09c-1ad4-24a0-7f1d66352565",
+    "parent": "23f1daef-1f63-c78e-360f-f4264ccf207d",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "title"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "12"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "title"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "c2292b23-87a6-ee04-54a5-3b2a70f15507",
+    "parent": "23f1daef-1f63-c78e-360f-f4264ccf207d",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "topic"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "8"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "topic"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "da5898cc-9fb5-4d66-b75a-05fb77e799b5",
+    "parent": "23f1daef-1f63-c78e-360f-f4264ccf207d",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "switch"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "4"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "switch"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "3c20536e-2adc-31e9-046b-d4145cad27ab",
+    "parent": "23f1daef-1f63-c78e-360f-f4264ccf207d",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "lineChart"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "12"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "chart"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "789c3503-8ac9-0de9-ad7a-c80d59f5b7ae",
+    "parent": "3c20536e-2adc-31e9-046b-d4145cad27ab",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": ""
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
+    "id": "cbe60a41-67f1-7ada-372f-42cf25eea2c3",
+    "parent": "3c20536e-2adc-31e9-046b-d4145cad27ab",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "canvasLineChart"
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "elementTag",
+      "type": "String",
+      "value": "canvas"
+     },
+     {
+      "name": "otherAttributes",
+      "type": "OtherAttributesArray",
+      "value": "[[\"height\",\"200\"],[\"width\",\"940\"]]"
+     }
+    ],
+    "type": "LayoutFreeForm",
+    "typeDesc": "FreeForm"
+   },
+   {
+    "id": "97327c71-b6a7-eec5-8357-ffef3c4bdbdd",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutSpace",
+    "typeDesc": "Space"
+   },
+   {
+    "id": "d929258b-8dd7-ddc5-9e9a-23eaf78559ac",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutRow",
+    "typeDesc": "Row"
+   },
+   {
+    "id": "51e6b28f-a7bf-01e9-4a71-386380bd4854",
+    "parent": "d929258b-8dd7-ddc5-9e9a-23eaf78559ac",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "barChart"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "5"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "chart"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "2be0fac6-93a6-24af-de30-80084f397534",
+    "parent": "51e6b28f-a7bf-01e9-4a71-386380bd4854",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": ""
+     },
+     {
+      "name": "html",
+      "type": "Html",
+      "value": ""
+     },
+     {
+      "name": "fontSize",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "color",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     }
+    ],
+    "type": "LayoutHtml",
+    "typeDesc": "Html"
+   },
+   {
+    "id": "ab9df0d3-d69a-820a-6c8f-e8c854bd1e2b",
+    "parent": "51e6b28f-a7bf-01e9-4a71-386380bd4854",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "canvasBarChart"
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "elementTag",
+      "type": "String",
+      "value": "canvas"
+     },
+     {
+      "name": "otherAttributes",
+      "type": "OtherAttributesArray",
+      "value": "[[\"height\",\"200\"],[\"width\",\"400\"]]"
+     }
+    ],
+    "type": "LayoutFreeForm",
+    "typeDesc": "FreeForm"
+   },
+   {
+    "id": "fd72bf7b-dfd0-2888-ad81-744062ae32d4",
+    "parent": "d929258b-8dd7-ddc5-9e9a-23eaf78559ac",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "map"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "5"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "map"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   },
+   {
+    "id": "a4b47ed8-afbb-18db-c609-37ebd6a7c9f6",
+    "parent": "d929258b-8dd7-ddc5-9e9a-23eaf78559ac",
+    "properties": [
+     {
+      "name": "name",
+      "type": "Id",
+      "value": "messages"
+     },
+     {
+      "name": "bootstrapExtraSmall",
+      "type": "String",
+      "value": "2"
+     },
+     {
+      "name": "bootstrapSmall",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapMedium",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapLarge",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "bootstrapCssClass",
+      "type": "String",
+      "value": ""
+     },
+     {
+      "name": "height",
+      "type": "Integer",
+      "value": ""
+     },
+     {
+      "name": "backgroundColor",
+      "type": "Color",
+      "value": ""
+     },
+     {
+      "name": "roundCorners",
+      "type": "RoundCorners",
+      "value": ""
+     },
+     {
+      "name": "textAlign",
+      "type": "TextAlign",
+      "value": ""
+     },
+     {
+      "name": "cssClass",
+      "type": "String",
+      "value": "messages"
+     }
+    ],
+    "type": "LayoutBootstrapColumn",
+    "typeDesc": "Column"
+   }
+  ],
+  "title": "CDF - Sample structure"
+ }
+}
