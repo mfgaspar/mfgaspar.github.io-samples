@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  Log4j Configuration                                                  -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+    <!-- ========================================================= -->
+    <!-- Special Log File specifically for Authentication Events   -->
+    <!-- This should be copied to your log4j.xml file              -->
+    <!-- ========================================================= -->
+
+    <appender name="AUTHENTICATELOG" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../logs/authenticate_events.log"/>
+        <param name="Append" value="false"/>
+        <param name="MaxFileSize" value="500KB"/>
+        <param name="MaxBackupIndex" value="1"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+
+    <category name="io.github.mfgaspar.pentaho.authentication.events.loggerListener">
+        <priority value="DEBUG"/>
+        <appender-ref ref="AUTHENTICATELOG"/>
+    </category>
+
+</log4j:configuration>
