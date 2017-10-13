@@ -89,13 +89,13 @@
   <!-- Project Libraries -->
   
   <path id="library.pentaho-lib.classpath">
-    <fileset dir="/home/pentaho/pentaho/pentaho-server-EXT/tomcat/webapps/pentaho/WEB-INF/lib">
+    <fileset dir="${pentaho.lib.folder}">
       <patternset refid="library.patterns"/>
     </fileset>
   </path>
   
   <path id="library.tomcat-lib.classpath">
-    <fileset dir="/home/pentaho/pentaho/pentaho-server-EXT/tomcat/lib">
+    <fileset dir="${tomcat.lib.folder}">
       <patternset refid="library.patterns"/>
     </fileset>
   </path>
