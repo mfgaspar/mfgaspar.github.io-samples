@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:pen="http://www.pentaho.com/schema/pentaho-system"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd
+       http://www.pentaho.com/schema/pentaho-system http://www.pentaho.com/schema/pentaho-system.xsd" default-lazy-init="true">
+
+    <bean id="loggerListener" class="io.github.mfgaspar.pentaho.authentication.events.loggerListener" scope="singleton">
+
+        <property name="enablePentahoLoggerListener" value="false"/>
+        <property name="enableNoAuthenticationEvents" value="true"/>
+        <property name="enableBadCredentialEvents" value="true"/>
+        <property name="enableSessionCreatedEvents" value="true"/>
+        <property name="enableSessionDestroyedEvents" value="true"/>
+        <property name="enableTraceServletEvents" value="false"/>
+        <property name="enableTraceOtherEvents" value="false"/>
+
+        <property name="messageTemplate" value="(%s|%s|%s|%s)"/>
+        <property name="noAuthenticationEventsId" value="NO-AUTHENTICATION"/>
+        <property name="badCredentialEventsId" value="AUTHENTICATION-FAILED"/>
+        <property name="sessionCreatedEventsId" value="SESSION-START"/>
+        <property name="sessionDestroyedEventsId" value="SESSION-END"/>
+
+    </bean>
+
+</beans>
