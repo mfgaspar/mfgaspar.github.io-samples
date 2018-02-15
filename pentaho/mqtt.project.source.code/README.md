@@ -1,9 +1,11 @@
 # Live Data Streaming using PDI and CTools Dashboards (MQTT)
 
+Install MQTT steps from Marketplase: 
+
 Run transformations:
 	- iot-device-emulator
 	- streaming-using-mqtt
-	
+
 Upload dashboard to Pentaho server and run the dashboards. Click on "Connect" button.
 
 Note: must be connected to internet
@@ -14,6 +16,9 @@ Note: must be connected to internet
 	- Updated code in dashboard
 	- No need to start an MQTT broker, using the one public available	
 	- Using now ws://iot.eclipse.org:80/ws for dashboards and tcp://iot.eclipse.org:1883 in PDI transformations.
-	
+
+15/02/108
+	- Updated dashboards to have less code
+	- Updated ChartJS libraries and code	
 
 

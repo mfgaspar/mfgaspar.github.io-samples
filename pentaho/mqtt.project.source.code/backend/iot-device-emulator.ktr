@@ -29,7 +29,7 @@ delayTime
       </parameter>
       <parameter>
         <name>numberOfMessages</name>
-        <default_value>500000</default_value>
+        <default_value>1000</default_value>
         <description>number os messages to be sent </description>
       </parameter>
     </parameters>
@@ -514,44 +514,6 @@ delayTime
     </hop>
   </order>
   <step>
-    <name>publisher</name>
-    <type>MQTTPublisherMeta</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <BROKER>tcp://iot.eclipse.org:1883</BROKER>
-    <TOPIC>pdiDataStreamDevices</TOPIC>
-    <TOPIC_IS_FROM_FIELD>N</TOPIC_IS_FROM_FIELD>
-    <FIELD>message</FIELD>
-    <CLIENT_ID>firstpublisher-clientID-9999999999</CLIENT_ID>
-    <TIMEOUT>30</TIMEOUT>
-    <QOS>0</QOS>
-    <REQUIRES_AUTH>false</REQUIRES_AUTH>
-    <SSL>
-      <CA_FILE />
-      <CERT_FILE />
-      <KEY_FILE />
-      <KEY_FILE_PASS />
-    </SSL>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>800</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>delay</name>
     <type>Delay</type>
     <description />
@@ -658,6 +620,38 @@ delayTime
     </remotesteps>
     <GUI>
       <xloc>96</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>publisher</name>
+    <type>MQTTPublisherMeta</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <BROKER>tcp://iot.eclipse.org:1883</BROKER>
+    <TOPIC>pdiDataStreamDevices</TOPIC>
+    <TOPIC_IS_FROM_FIELD>N</TOPIC_IS_FROM_FIELD>
+    <FIELD>message</FIELD>
+    <CLIENT_ID>firstpublisher-clientID-99999</CLIENT_ID>
+    <TIMEOUT>30</TIMEOUT>
+    <QOS>0</QOS>
+    <REQUIRES_AUTH>false</REQUIRES_AUTH>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>800</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
